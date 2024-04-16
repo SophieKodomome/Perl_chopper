@@ -6,7 +6,7 @@ use Tk::PNG;
 use Tk::JPEG;
 use lib '.';
 
-use Windows_game;
+#use Windows_game;
 
 package Windows_menu;
 
@@ -31,44 +31,44 @@ sub _init {
     my $titre = $self->{mw}->Photo(-format => 'png', -file => "img/title.png");
     $self->{rectangle} = $self->{canvas}->createImage(800, 350, -image => $titre);
 
-    $self->{button} = $self->create__play_button;
+    $self->{button} = $self->create_play_button;
 }
 
 
 # button
-sub create__play_button {
+sub create_play_button {
     my $self = shift;
 
-    my $button = $self->{mw}->Button(
+    my $play_button = $self->{mw}->Button(
         -text => "Play",
-        -font => "{Enter Command Bold} 14",
-        -background => "#FFD5FC",      # Couleur de fond
-        -foreground => "#281730",      # Couleur du texte
-        -activebackground => "#EBD3EA",# Couleur de fond lors du survol
-        -activeforeground => "#281730",# Couleur du texte lors du survol
+        -font => "{EnterCommand} 64",
+        -background => "#fdeae0",      # Couleur de fond
+        -foreground => "#0a143f",      # Couleur du texte
+        -activebackground => "#0a143f",# Couleur de fond lors du survol
+        -activeforeground => "#f64967",# Couleur du texte lors du survol
         -borderwidth => 10,             # Pas de bordure
         -highlightthickness => 0,      # Pas de mise en évidence
         -padx => 100,                   # Remplissage horizontal
         -pady => 14,                   # Remplissage vertical
         -command => sub { $self->button_click },    # Action à exécuter lors du clic
     );
-    $button->configure(
+    $play_button->configure(
         -relief => 'flat',             # Pas de relief
         -highlightcolor => "#EBD3EA",  # Couleur de mise en évidence
     );
-    $button->place(
+    $play_button->place(
         -relx => 0.5,
         -rely => 0.65,
         -anchor => 'center',
     );
-    return $button;
+    return $play_button;
 }
-sub button_click {
-    my $self = shift;
-    require Windows_game; 
-    Windows_game->new->run; 
-    $self->{mw}->destroy; 
-}
+#sub button_click {
+#    my $self = shift;
+#    require Windows_game; 
+#    Windows_game->new->run; 
+#    $self->{mw}->destroy; 
+#}
 
 
 sub pre {
