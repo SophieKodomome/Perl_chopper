@@ -6,7 +6,7 @@ use Tk::PNG;
 use Tk::JPEG;
 use lib '.';
 
-use Fenetre_jeu;
+use Window_game;
 
 package Window_menu;
 
@@ -64,8 +64,8 @@ sub create_button {
 }
 sub button_click {
     my $self = shift;
-    require Fenetre_jeu; 
-    Fenetre_jeu->new->run; 
+    require Window_game; 
+    Window_game->new->run; 
     $self->{mw}->destroy; 
 }
 
