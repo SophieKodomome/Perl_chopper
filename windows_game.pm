@@ -11,7 +11,7 @@ use Objet;
 use Helicopter;
 use Obstacle;
 use Heliport;
-use Window_game;
+use Windows_menu;
 
 sub new {
     my ($class) = @_;
@@ -80,8 +80,8 @@ sub move_helicopter {
         $self->{canvas}->delete(@{$self->{obstacles}});
 
         $self->{mw}->bind('<KeyPress-r>', sub { 
-            require Window_game; 
-            Window_game->new->run; 
+            require Windows_menu; 
+            Windows_menu->new->run; 
             $self->{mw}->destroy
         });
         return;
