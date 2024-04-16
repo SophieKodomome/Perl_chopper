@@ -10,6 +10,7 @@ use Windows_game;
 
 package Windows_menu;
 
+#constructor
 sub new {
     my ($class) = @_;
     my $self = {
