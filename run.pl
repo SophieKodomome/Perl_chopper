@@ -3,6 +3,6 @@ use strict;
 use warnings;
 use lib '.';
 
-use Fenetre_menu;
+use Window_menu;
 
-Fenetre_menu->new->run;
+Window_menu->new->run;
