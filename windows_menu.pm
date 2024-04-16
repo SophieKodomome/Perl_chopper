@@ -10,7 +10,7 @@ use Windows_game;
 
 package Windows_menu;
 
-#constructor
+#create instance
 sub new {
     my ($class) = @_;
     my $self = {
@@ -28,20 +28,20 @@ sub _init {
     $self->pre;
     my $mw = $self->{mw};
 
-    my $titre = $self->{mw}->Photo(-format => 'png', -file => "assets/images/titre.png");
+    my $titre = $self->{mw}->Photo(-format => 'jpg', -file => "img/bckgrnd.jpg");
     $self->{rectangle} = $self->{canvas}->createImage(800, 350, -image => $titre);
 
-    $self->{button} = $self->create_button;
+    $self->{button} = $self->create__play_button;
 }
 
 
 # button
-sub create_button {
+sub create__play_button {
     my $self = shift;
 
     my $button = $self->{mw}->Button(
         -text => "Play",
-        -font => "{Broken Console Bold} 14",
+        -font => "{Enter Command Bold} 14",
         -background => "#FFD5FC",      # Couleur de fond
         -foreground => "#281730",      # Couleur du texte
         -activebackground => "#EBD3EA",# Couleur de fond lors du survol
