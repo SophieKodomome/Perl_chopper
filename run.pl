@@ -3,6 +3,6 @@ use strict;
 use warnings;
 use lib '.';
 
-use Window_menu;
+use Windows_menu;
 
-Window_menu->new->run;
+Windows_menu->new->run;
