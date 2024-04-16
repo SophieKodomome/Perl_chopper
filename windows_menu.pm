@@ -28,7 +28,7 @@ sub _init {
     $self->pre;
     my $mw = $self->{mw};
 
-    my $titre = $self->{mw}->Photo(-format => 'jpg', -file => "img/bckgrnd.jpg");
+    my $titre = $self->{mw}->Photo(-format => 'png', -file => "img/title.png");
     $self->{rectangle} = $self->{canvas}->createImage(800, 350, -image => $titre);
 
     $self->{button} = $self->create__play_button;
@@ -95,7 +95,7 @@ sub pre {
     $self->{canvas} = $self->{mw}->Canvas(-width => $window_width, -height => $window_height)->pack;
 
     # Charger l'image à utiliser comme arrière-plan
-    my $background_image_file = 'assets/images/background.jpg';  
+    my $background_image_file = 'img/bckgrnd.jpg';  
     my $background_image = $self->{mw}->Photo(-file => $background_image_file);
 
     # Créer un label pour afficher l'image en arrière-plan
