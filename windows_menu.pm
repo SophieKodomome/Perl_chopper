@@ -6,9 +6,9 @@ use Tk::PNG;
 use Tk::JPEG;
 use lib '.';
 
-use Window_game;
+use Windows_game;
 
-package Window_menu;
+package Windows_menu;
 
 sub new {
     my ($class) = @_;
@@ -64,8 +64,8 @@ sub create_button {
 }
 sub button_click {
     my $self = shift;
-    require Window_game; 
-    Window_game->new->run; 
+    require Windows_game; 
+    Windows_game->new->run; 
     $self->{mw}->destroy; 
 }
 
